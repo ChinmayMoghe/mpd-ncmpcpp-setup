@@ -1,0 +1,3 @@
+visualizer_fifo_path = "/data/data/com.termux/files/usr/tmp/mpd.fifo"
+visualize_output_name = "my_fifo"
+
