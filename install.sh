@@ -39,4 +39,8 @@ else
    cp $mpdconf $mpdconfpath;
    cp $ncmpcppconf $ncmpcppconfpath;
    touch $mpdsocketpath/$mpdsocket
+   echo "Copy some music under "Music" folder in internal storage."
+   echo; echo "${GREEN}You are now good to play some music !!!";
+   echo "Just run ${GREEN} mpd && ncmpcpp";
+   echo "Press 2 to list music and hit enter to play music."
 fi
