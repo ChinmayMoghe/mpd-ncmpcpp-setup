@@ -3,8 +3,8 @@
 pkgs='mpd ncmpcpp'
 ncmpcppconf='config'
 mpdconf='mpd.conf'
-mpdpconfpath='/data/data/com.termux/files/usr/etc/'
-ncmpcppconfpath='/data/data/com.termux/files/home/.ncmpcpp/'
+mpdpconfpath='/data/data/com.termux/files/usr/etc'
+ncmpcppconfpath='/data/data/com.termux/files/home/.ncmpcpp'
 GREEN="$(printf '\033[32m')"
 
 # Check if required packages installed
@@ -28,7 +28,7 @@ cp $mpdconf $mpdpconfpath;
 cp $ncmpcppconf $ncmpcppconfpath;
 
 # Verify files 
-if [[(-L $mpdconfpath/$mpdconf) && ($ncmpcppconfpath/$ncmpcppconf)]]; then
+if [[ (-L $mpdconfpath/$mpdconf) && (-L $ncmpcppconfpath/$ncmpcppconf) ]]; then
    echo; echo "${GREEN}You are now good to play some music !!!";
    echo "Just run ${GREEN} mpd && ncmpcpp";
 fi
