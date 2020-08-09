@@ -5,6 +5,8 @@ ncmpcppconf='config'
 mpdconf='mpd.conf'
 mpdconfpath='/data/data/com.termux/files/usr/etc'
 ncmpcppconfpath='/data/data/com.termux/files/home/.ncmpcpp'
+mpdsocketpath='/data/data/com.termux/files/usr/var/run'
+mpdsocket='mpd.socket'
 GREEN="$(printf '\033[32m')"
 
 # Check if required packages installed
@@ -22,13 +24,19 @@ fi
 if [[ ! -d $ncmpcppconfpath ]]; then
      mkdir $ncmpcppconfpath
 fi
-# Copying files
-echo "Copying config files , completing installation process";
-cp $mpdconf $mpdconfpath;
-cp $ncmpcppconf $ncmpcppconfpath;
 
-# Verify files 
-if [[ (-f $mpdconfpath/$mpdconf) && (-f $ncmpcppconfpath/$ncmpcppconf) ]]; then
+if [[ ! -d $mpdsocketpath ]]; then
+     mkdir $mpdsocketpath
+fi
+
+# Verify files
+if [[ (-f $mpdconfpath/$mpdconf) && (-f $ncmpcppconfpath/$ncmpcppconf) && (-f $mpdsocketpath/$mpdsocket)]]; then
    echo; echo "${GREEN}You are now good to play some music !!!";
    echo "Just run ${GREEN} mpd && ncmpcpp";
+else
+   # Copying files
+   echo "Copying config files , completing installation process";
+   cp $mpdconf $mpdconfpath;
+   cp $ncmpcppconf $ncmpcppconfpath;
+   touch $mpdsocketpath/$mpdsocket
 fi
