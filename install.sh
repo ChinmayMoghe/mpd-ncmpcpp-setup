@@ -33,6 +33,7 @@ fi
 if [[ (-f $mpdconfpath/$mpdconf) && (-f $ncmpcppconfpath/$ncmpcppconf) && (-f $mpdsocketpath/$mpdsocket)]]; then
    echo; echo "${GREEN}You are now good to play some music !!!";
    echo "Just run ${GREEN} mpd && ncmpcpp";
+   echo "To stop ncmpcpp press Q key and to stop mpd run command : mpd --kill"
 else
    # Copying files
    echo "Copying config files , completing installation process";
@@ -41,6 +42,7 @@ else
    touch $mpdsocketpath/$mpdsocket
    echo "Copy some music under "Music" folder in internal storage."
    echo; echo "${GREEN}You are now good to play some music !!!";
-   echo "Just run ${GREEN} mpd && ncmpcpp";
+   echo "Just run ${GREEN} : mpd && ncmpcpp";
    echo "Press 2 to list music and hit enter to play music."
+   echo "To stop ncmpcpp press Q key and to stop mpd run command : mpd --kill"
 fi
