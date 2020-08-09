@@ -3,7 +3,7 @@
 pkgs='mpd ncmpcpp'
 ncmpcppconf='config'
 mpdconf='mpd.conf'
-mpdpconfpath='/data/data/com.termux/files/usr/etc'
+mpdconfpath='/data/data/com.termux/files/usr/etc'
 ncmpcppconfpath='/data/data/com.termux/files/home/.ncmpcpp'
 GREEN="$(printf '\033[32m')"
 
@@ -24,11 +24,11 @@ if [[ ! -d $ncmpcppconfpath ]]; then
 fi
 # Copying files
 echo "Copying config files , completing installation process";
-cp $mpdconf $mpdpconfpath;
+cp $mpdconf $mpdconfpath;
 cp $ncmpcppconf $ncmpcppconfpath;
 
 # Verify files 
-if [[ (-L $mpdconfpath/$mpdconf) && (-L $ncmpcppconfpath/$ncmpcppconf) ]]; then
+if [[ (-f $mpdconfpath/$mpdconf) && (-f $ncmpcppconfpath/$ncmpcppconf) ]]; then
    echo; echo "${GREEN}You are now good to play some music !!!";
    echo "Just run ${GREEN} mpd && ncmpcpp";
 fi
