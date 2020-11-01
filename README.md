@@ -1,7 +1,8 @@
 # mpd-ncmpcpp-setup
 
+![mpd & ncmpcpp](screenshots/cli_animated.gif?raw=true)  
+
 A simple termux setup for mpd and ncmpcpp.
-![mpd & ncmpcpp](screenshots/cli_animated.gif?raw=true)
 Steps to run :
 1. Ensure you have termux app installed from playstore.
 2. NOTE: Skip this step if you have git installed.  
