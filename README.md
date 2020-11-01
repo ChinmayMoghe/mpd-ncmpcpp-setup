@@ -21,7 +21,7 @@ Steps to run :
 To listen to music run  
 ```mpd && ncmpcpp```
 
-Press ```2``` to list music and hit ```Enter`` key to play music.
+Press ```2``` to list music and hit ```Enter``` key to play music.
 
 Press ```q``` key to quit ncmpcpp client, and run ```mpd --kill``` to quit mpd.
 ### Song selection  
